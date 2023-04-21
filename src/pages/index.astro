@@ -1,32 +1,8 @@
 ---
-
-const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10');
-const data = await res.json();
-// console.log(data);
-
-const myName = "Milan";
-
+// components imports
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>{myName}</h1>
-		<ul>
-		{
-			data.map((item: { 
-				title: string,
-				id: number
-			
-			}) => 
-				(<li>{item.id} - {item.title}</li>))
-		}
-		</ul>
-	</body>
-</html>
+<MainLayout title="Home">
+	<h1>Hi there from home page</h1>
+</MainLayout>
